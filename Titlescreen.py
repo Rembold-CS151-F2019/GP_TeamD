@@ -123,18 +123,18 @@ def TitleScreen():
 
 
 
-TitleScreen()
-key= None
-while key != 'q':
-    key=w.checkKey()
-    click=w.checkMouse()
-    #P.control(key)
-    if click != None:
-         for item in w.items[:]:
-            item.undraw()
+##TitleScreen()
+##key= None
+##while key != 'q':
+#    key=w.checkKey()
+#    click=w.checkMouse()
+#    #P.control(key)
+#    if click != None:
+#         for item in w.items[:]:
+#            item.undraw()
 
 
-w.close()  
+#w.close()  
 
 
 

@@ -6,14 +6,15 @@ Created on Mon Dec  2 12:26:57 2019
 @author: elliegreenberg
 """
 import graphics as g 
+import Titlescreen
 
 
-w=g.GraphWin("Final Game",1000,700)
+w=Titlescreen.w
 w.setBackground("SkyBlue")
 
-Ground = g.Rectangle(g.Point(0,450), g.Point(1000,700))
-Ground.setFill("ForestGreen")
-Ground.draw(w)
+#Ground = g.Rectangle(g.Point(0,450), g.Point(1000,700))
+#Ground.setFill("ForestGreen")
+#Ground.draw(w)
 
 class Hen:
     def __init__(self, w,x,y,r):
@@ -34,7 +35,7 @@ class Hen:
     def updatestate(self):
         if  self.oldstate==0 and self.newstate==1:
             self.body.undraw()
-            self.body=g.Circle(g.Point(300,314), 70)
+            self.body=g.Circle(g.Point(300,308), 70)
             self.body.setFill('DarkSlateBlue')
             self.body.draw(w)
             self.oldstate=self.newstate
@@ -65,16 +66,16 @@ class Hen:
             elif self.oldstate==1:
                 self.newstate=0
 
-H=Hen(w,300,380,70)     
+#H=Hen(w,300,380,70)     
 
-
-key= None
-
-while key != 'e':
-    
-    key=w.checkKey()
-    H.control(key)
-    H.updatestate()
-    #g.update(30)
-
-w.close()  
+#
+#key= None
+#
+#while key != 'e':
+#    
+#    key=w.checkKey()
+#    H.control(key)
+#    H.updatestate()
+#    #g.update(30)
+#
+#w.close()  

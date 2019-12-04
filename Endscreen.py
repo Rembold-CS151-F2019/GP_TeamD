@@ -6,8 +6,9 @@ Created on Tue Dec  3 10:56:23 2019
 @author: elliegreenberg
 """
 import graphics as g 
+import Titlescreen
 
-w=g.GraphWin("Final Game",1000,700)
+w=Titlescreen.w
 w.setBackground("SkyBlue")
 
 
@@ -101,4 +102,4 @@ def EndScreen():
     message5.setStyle("bold")
     message5.setTextColor("White")
     message5.draw(w)  
-EndScreen()
+#EndScreen()

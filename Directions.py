@@ -7,8 +7,9 @@ Created on Mon Dec  2 11:14:50 2019
 """
 
 import graphics as g 
+import Titlescreen
 
-w=g.GraphWin("Final Game",1000,700)
+w= Titlescreen.w
 
 
 def DirectionScreen():
@@ -65,16 +66,16 @@ def DirectionScreen():
     
     
     #print(w.getMouse().getY())
-DirectionScreen()    
-
-    
-key= None
-while key != 'q':
-    key=w.checkKey()
-    click=w.checkMouse()
-    #P.control(key)
-    if click != None:
-        print(click)
-
-
-w.close()  
+#DirectionScreen()    
+#
+#    
+#key= None
+#while key != 'q':
+#    key=w.checkKey()
+#    click=w.checkMouse()
+#    #P.control(key)
+#    if click != None:
+#        print(click)
+#
+#
+#w.close()  
