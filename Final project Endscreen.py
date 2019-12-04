@@ -101,3 +101,4 @@ def EndScreen():
     message5.setStyle("bold")
     message5.setTextColor("White")
     message5.draw(w)  
+EndScreen()
