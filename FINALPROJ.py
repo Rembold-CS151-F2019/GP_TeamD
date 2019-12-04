@@ -2,9 +2,6 @@
 import graphics as g
 import random
 
-#henrietta radius is 70
-#ground is 450
-
 class Objects:
     def __init__(self,w,x,y,):
         self.w = w
@@ -13,40 +10,46 @@ class Objects:
         self.direction = int(-1)
         self.speed = float(0.5)
         self.draw()
-        self.move()
-    
-    def draw(self):
-        self.log = g.Circle(g.Point(self.x,485),35)
-        self.cloud = g.Circle(g.Point(self.x,200),35)
+        self.offscreen()
 
-        self.log.setFill('sienna4')
-        self.cloud.setFill('snow')
-        
-        for obj in [self.log,self.cloud]:
-            obj.draw(self.w)
+
+    def offscreen(self):
     
-    def move(self):
+        if self.obj.getCenter().getX()+35 < 0:
+            self.obj.undraw()
+            return True
+
         dx = self.direction*5
         dy = 0
-            
-        for obj in [self.log,self.cloud]:
-            obj.move(dx,dy)
-            
+        self.obj.move(dx,dy)
         self.w.after(30, self.move)
-    
-    def hit(self,x,y):
+
+    def faster(self):
         pass
 
-def main():
+    def hit(self,x,y):
+        if self.obj.getCenter() - H.getCenter() <= 105:
+            return EndScreen()
 
-    w = g.GraphWin("FINAL",1000,700)
-    objects = Objects(w,450,450)
-    w.getMouse()
-        
-    key = None
-    while key != 'q':
-        key = w.checkKey()
-    w.close()
+class Log(Objects):
+    def draw(self):
+            self.obj = g.Circle(g.Point(self.x,485),35)
 
-if __name__ == '__main__':
-    main()
+            self.obj.setFill('sienna4')
+            self.obj.draw(self.w)
+
+
+class Cloud(Objects):
+    def draw(self):
+            
+            self.obj = g.Circle(g.Point(self.x,200),35)
+            self.obj.setFill('snow')          
+            self.obj.draw(self.w)
+
+w = g.GraphWin("FINAL",1000,700)
+objects = Log(w,450,450)
+objects = Cloud(w,250,450)
+key = None
+while key != 'e':
+    key = w.checkKey()
+w.close()
