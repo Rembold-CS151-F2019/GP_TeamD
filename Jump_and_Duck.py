@@ -76,7 +76,7 @@ class Hen:
             if self.oldstate==0:
                 self.newstate=-1
             elif self.oldstate==1:
-                self.newstate=0
+                self.newstate=0 
 
 
   
