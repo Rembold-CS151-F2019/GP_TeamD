@@ -10,7 +10,7 @@ class Objects:
         self.direction = int(-1)
         self.speed = float(0.5)
         self.draw()
-        self.offscreen()
+        self.move()
 
 
     def offscreen(self):
@@ -18,17 +18,23 @@ class Objects:
         if self.obj.getCenter().getX()+35 < 0:
             self.obj.undraw()
             return True
+        return False
+        
+    def move(self):
 
         dx = self.direction*5
         dy = 0
         self.obj.move(dx,dy)
-        self.w.after(30, self.offscreen)
+        self.w.after(30, self.move)
 
     def faster(self):
         pass
 
     def hit(self,H):
-        if self.obj.getCenter() - H.body.getCenter() <= 105:
+        DX=(self.obj.getCenter().getX() - H.body.getCenter().getX())**2
+        DY=(self.obj.getCenter().getY() - H.body.getCenter().getY())**2
+        HYP=(DX+DY)**.5
+        if HYP <= 35+H.getr():
             return True
         else:
             return False

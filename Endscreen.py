@@ -12,7 +12,7 @@ w=Titlescreen.w
 w.setBackground("SkyBlue")
 
 
-def EndScreen():
+def EndScreen(scounter):
     Ground = g.Rectangle(g.Point(0,350), g.Point(1000,700))
     Ground.setFill("ForestGreen")
     Ground.draw(w)
@@ -90,10 +90,8 @@ def EndScreen():
     message3.setSize(25)
     message3.draw(w)  
       
-    message4 = g.Text(g.Point(200,160), f"Your runtime was [enter timer function here]")
-    message4.setSize(18)
-    message4.draw(w) 
-    message5 = g.Text(g.Point(220,250), f"You dodged [enter obstacle counter here] objects")
+     
+    message5 = g.Text(g.Point(220,250), f"You dodged {scounter} objects")
     message5.setSize(18)
     #message5.setFace("courier")
     message5.draw(w)  

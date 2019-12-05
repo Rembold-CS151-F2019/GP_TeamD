@@ -17,23 +17,26 @@ import random
 w = Titlescreen.w
 obj = []
 
-def create():    
+def create(): 
    r = [0,1]  
    c = random.choice(r)
    if c == 0:
        #FINALPROJ.Log(w,1000,450)
-       obj.append(FINALPROJ.Log(w,1000,450))
+       obj.append(FINALPROJ.Log(w,1050,450))
    elif c == 1:
        #FINALPROJ.Cloud(w,1000,450)
-       obj.append(FINALPROJ.Cloud(w,1000,450))
-       
-   w.after(3000,create)
+       obj.append(FINALPROJ.Cloud(w,1050,450))
+   if not gameover:
+       w.after(3000,create)
    
 
 def main():
+    global gameover
     Titlescreen.TitleScreen()
     key = None
     counter = 0
+    scounter=0
+    gameover=False
     while key != 'e':    
         key=w.checkKey()
         if key == "Right":
@@ -59,12 +62,30 @@ def main():
             message0.undraw()
             create()
             key = None
-            while key!= 'e':
+            while key!= 'e' and not gameover:
                 key=w.checkKey()
                 H.control(key)
                 H.updatestate()
+                for o in obj.copy():
+                    if o.hit(H):
+                        gameover=True
+                    if o.offscreen():
+                        scounter +=1
+                        obj.remove(o)
                 g.update(30)
-                
+        if gameover:
+            break
+    for item in w.items[:]:
+        item.undraw()
+    if scounter>0:
+        scounter+=1
+    Endscreen.EndScreen(scounter)
+    while key!= 'e':
+        key=w.checkKey()
+        for o in obj:
+            o.obj.undraw()
+            obj.remove(o)
+            
              
                
        

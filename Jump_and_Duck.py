@@ -25,7 +25,8 @@ class Hen:
         self.Create()
         self.oldstate=0
         self.newstate=None
-    
+    def getr(self):
+        return self.r
     def Create(self):
         self.body=g.Circle(g.Point(self.x,self.y), self.r)
         self.body.setFill('DarkSlateBlue')
@@ -42,15 +43,18 @@ class Hen:
         elif self.oldstate==0 and self.newstate==-1:
             self.body.undraw()
             self.body=g.Circle(g.Point(300,416), 34)
+            self.r = 34
             self.body.setFill('DarkSlateBlue')
             self.body.draw(w)
             self.oldstate=self.newstate
         elif self.oldstate==-1 and self.newstate==0:
             self.body.undraw()
+            self.r = 70
             self.Create()
             self.oldstate=self.newstate
         elif self.oldstate==1 and self.newstate==0:
             self.body.undraw()
+            self.r = 70
             self.Create()
             self.oldstate=self.newstate
 
