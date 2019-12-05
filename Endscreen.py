@@ -84,7 +84,7 @@ def EndScreen(scounter):
     Stem.draw(w)
     
     #makes quote box and text for henrietta to be saying "phew"
-    Textbox=g.Polygon(g.Point(264,347), g.Point(451,347),g.Point(451,380),g.Point(600,425),g.Point(451,420),g.Point(264,420))
+    Textbox=g.Polygon(g.Point(264,347), g.Point(451,347),g.Point(451,380),g.Point(600,425),g.Point(451,410),g.Point(451,420),g.Point(264,420))
     
     Textbox.setFill("White")  
     Textbox.draw(w)
@@ -102,4 +102,4 @@ def EndScreen(scounter):
     message5.setStyle("bold")
     message5.setTextColor("White")
     message5.draw(w)  
-#EndScreen()
+

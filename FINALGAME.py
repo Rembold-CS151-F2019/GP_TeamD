@@ -9,7 +9,7 @@ Created on Wed Dec  4 13:07:24 2019
 import graphics as g
 import Directions
 import Endscreen
-import FINALPROJ
+import Logs_Clouds_Hit
 import Jump_and_Duck
 import Titlescreen
 import random
@@ -21,11 +21,11 @@ def create():
    r = [0,1]  
    c = random.choice(r)
    if c == 0:
-       #FINALPROJ.Log(w,1000,450)
-       obj.append(FINALPROJ.Log(w,1050,450))
+    
+       obj.append(Logs_Clouds_Hit.Log(w,1050,450))
    elif c == 1:
-       #FINALPROJ.Cloud(w,1000,450)
-       obj.append(FINALPROJ.Cloud(w,1050,450))
+ 
+       obj.append(Logs_Clouds_Hit.Cloud(w,1050,450))
    if not gameover:
        w.after(3000,create)
    

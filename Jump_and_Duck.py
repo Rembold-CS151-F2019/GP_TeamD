@@ -32,13 +32,13 @@ class Hen:
         
    
     def updatestate(self):
-    '''
-    This changes Henrietta's size and location based on what she was before (what her oldstate was).
-    (prevents a small, ducking circle from being able to jump, has to return to regular state first and then jump 
-    after a second Up click)
-    If ducking, the state is -1, if regular, the state is zero, and if jumping, the state is 1.
-    To change from state to state, this first undraws the old Henrietta and then draws a new one (newstate).
-    '''
+        '''
+        This changes Henrietta's size and location based on what she was before (what her oldstate was).
+        (prevents a small, ducking circle from being able to jump, has to return to regular state first and then jump 
+        after a second Up click)
+        If ducking, the state is -1, if regular, the state is zero, and if jumping, the state is 1.
+        To change from state to state, this first undraws the old Henrietta and then draws a new one (newstate).
+        '''
         if  self.oldstate==0 and self.newstate==1:
             self.body.undraw()
             self.body=g.Circle(g.Point(300,308), 70)
@@ -64,9 +64,9 @@ class Hen:
             self.oldstate=self.newstate
 
     def control(self, key):
-    '''This sets the status of the states based on what the user imputs. For example, If the user
-    presses Up, and henrietta was ducking (oldstate=-1), it makes her her regular size (newstate=0).
-    '''
+        '''This sets the status of the states based on what the user imputs. For example, If the user
+        presses Up, and henrietta was ducking (oldstate=-1), it makes her her regular size (newstate=0).
+        '''
         if key=='Up':
             if self.oldstate==0:
                 self.newstate=1

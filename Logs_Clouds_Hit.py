@@ -27,8 +27,6 @@ class Objects:
         self.obj.move(dx,dy)
         self.w.after(30, self.move)
 
-    def faster(self):
-        pass
 
     def hit(self,H):
         DX=(self.obj.getCenter().getX() - H.body.getCenter().getX())**2
