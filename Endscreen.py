@@ -48,7 +48,7 @@ def EndScreen(scounter):
     Nostril1.draw(w)
     Nostril2.draw(w)
     
-    Mouth=g.Circle(g.Point(663,427),15)
+    Mouth=g.Circle(g.Point(655,427),25)
     Mouth.setFill('Black')
     Mouth.draw(w)
     
@@ -82,7 +82,7 @@ def EndScreen(scounter):
     Stem.draw(w)
     
     
-    Textbox=g.Polygon(g.Point(264,347), g.Point(451,347),g.Point(451,380),g.Point(519,410),g.Point(451,420),g.Point(264,420))
+    Textbox=g.Polygon(g.Point(264,347), g.Point(451,347),g.Point(451,380),g.Point(600,425),g.Point(451,420),g.Point(264,420))
     
     Textbox.setFill("White")  
     Textbox.draw(w)
@@ -92,8 +92,8 @@ def EndScreen(scounter):
       
      
     message5 = g.Text(g.Point(220,250), f"You dodged {scounter} objects")
-    message5.setSize(18)
-    #message5.setFace("courier")
+    message5.setSize(30)
+    message5.setFace("courier")
     message5.draw(w)  
     message5 = g.Text(g.Point(694,660), 'Thanks for playing! Press E to exit')
     message5.setSize(30)
