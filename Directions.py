@@ -14,7 +14,7 @@ w= Titlescreen.w
 
 def DirectionScreen():
     w.setBackground("MediumPurple1")
-    
+    #main messages for title
     message1 = g.Text(g.Point(158,81), "Directions ")
     message2 = g.Text(g.Point(420,200),"Help Henrietta avoid the obstacles she encounters on her run! ")
     message3 = g.Text(g.Point(450,250), 'Click the Up and Down arrows on your keyboard to jump over logs')
