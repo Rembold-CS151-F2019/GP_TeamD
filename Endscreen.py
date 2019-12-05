@@ -13,16 +13,18 @@ w.setBackground("SkyBlue")
 
 
 def EndScreen(scounter):
+    #Makes the ground in the background (why it's created first)
     Ground = g.Rectangle(g.Point(0,350), g.Point(1000,700))
     Ground.setFill("ForestGreen")
     Ground.draw(w)
+    #main congratulatory message
     message1 = g.Text(g.Point(150,100), "NICE JOB! ")
     message1.setStyle("bold")
     message1.setTextColor("Indigo")
     message1.setSize(36)
     message1.draw(w)
     
-    
+    #Makes henrietta and log, copied from title screen (except for the mouth)
     Ear1=g.Oval(g.Point(570,126), g.Point(600,196))
     Ear1.setFill('DarkSlateBlue')
     Ear1.draw(w)
@@ -81,7 +83,7 @@ def EndScreen(scounter):
     Stem.setFill('sienna4')
     Stem.draw(w)
     
-    
+    #makes quote box and text for henrietta to be saying "phew"
     Textbox=g.Polygon(g.Point(264,347), g.Point(451,347),g.Point(451,380),g.Point(600,425),g.Point(451,420),g.Point(264,420))
     
     Textbox.setFill("White")  
@@ -90,7 +92,7 @@ def EndScreen(scounter):
     message3.setSize(25)
     message3.draw(w)  
       
-     
+    #tells results of the game and instructions to exit
     message5 = g.Text(g.Point(220,250), f"You dodged {scounter} objects")
     message5.setSize(30)
     message5.setFace("courier")
