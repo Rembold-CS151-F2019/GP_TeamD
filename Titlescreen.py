@@ -17,7 +17,7 @@ w.setBackground("SkyBlue")
 
 
 def TitleScreen():
-    
+    #Makes ground and Title
     Ground = g.Rectangle(g.Point(0,350), g.Point(1000,700))
     Ground.setFill("ForestGreen")
     Ground.draw(w)
@@ -32,7 +32,7 @@ def TitleScreen():
                 obj.draw(w)
                 
     
-    
+    #Draws Henrietta's ears
     Ear1=g.Oval(g.Point(570,126), g.Point(600,196))
     Ear1.setFill('DarkSlateBlue')
     Ear1.draw(w)
@@ -40,6 +40,7 @@ def TitleScreen():
     Ear2.setFill('DarkSlateBlue')
     Ear2.draw(w)
     
+    #Draws the ovals that make up the body and head of Henrietta
     Body = g.Oval(g.Point(400,350), g.Point(1100,1000))
     Body.setFill('DarkSlateBlue')
     Body.draw(w)
@@ -47,10 +48,12 @@ def TitleScreen():
     Head.setFill('DarkSlateBlue')
     Head.draw(w)
     
+    #Makes the muzzle? snout? hippo face?
     Face = g.Polygon(g.Point(613,291), g.Point(567,430), g.Point(603,470),g.Point(824,470),g.Point(863,430),g.Point(802,291))
     Face.setFill('plum4')
     Face.draw(w)
     
+    #NOSTRILSSSS
     Nostril1=g.Oval(g.Point(635,330), g.Point(665,370))
     Nostril1.setFill('DarkSlateBlue')
     Nostril2=g.Oval(g.Point(753,330), g.Point(783,370))
@@ -58,10 +61,12 @@ def TitleScreen():
     Nostril1.draw(w)
     Nostril2.draw(w)
     
+    #Draws the smile
     Smile=g.Polygon(g.Point(599,421), g.Point(622,446),g.Point(703,465),g.Point(745,461), g.Point(766,458),g.Point(786,454),g.Point(806,437),g.Point(827,416))
     Smile.setFill('Black')
     Smile.draw(w)
     
+    #Draws Henriettas eyes and makes them less scary by adding in little reflection circles
     Eye1=g.Oval(g.Point(653,210), g.Point(690,260))
     Eye1.setFill("black")
     Eye2=g.Oval(g.Point(731,210), g.Point(768,260))
@@ -73,9 +78,7 @@ def TitleScreen():
     for  obj in [Eye1,Eye2,Eye3,Eye4]:
                 obj.draw(w)
                 
-    
-    
-    
+    #Makes the log and leaf in the left corner
     Log1= g.Rectangle(g.Point(0,564), g.Point(246,700))
     Log2=g.Circle(g.Point(246,632),68)
     Log3=g.Circle(g.Point(246,632),48)
@@ -93,7 +96,7 @@ def TitleScreen():
     Stem.setFill('sienna4')
     Stem.draw(w)
     
-    
+    #Draws the two clouds
     Cloud1 = g.Circle(g.Point(733,60), 50)
     Cloud2 = g.Circle(g.Point(693,60), 35)
     Cloud3 = g.Circle(g.Point(773,55), 30)
@@ -109,7 +112,8 @@ def TitleScreen():
                 obj.setFill('snow')
                 obj.setOutline("snow")
                 obj.draw(w)
-                
+    
+    #Draws the textbox and text that tells the user what to do next
     Textbox=g.Rectangle(g.Point(75,269), g.Point(385,488))
     Textbox.setFill("MediumPurple1")  
     Textbox.draw(w)
@@ -123,18 +127,6 @@ def TitleScreen():
 
 
 
-##TitleScreen()
-##key= None
-##while key != 'q':
-#    key=w.checkKey()
-#    click=w.checkMouse()
-#    #P.control(key)
-#    if click != None:
-#         for item in w.items[:]:
-#            item.undraw()
-
-
-#w.close()  
 
 
 
