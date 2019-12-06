@@ -50,7 +50,7 @@ class Log(Objects):
 class Cloud(Objects):
     def draw(self):
             
-            self.obj = g.Circle(g.Point(self.x,180),35)
+            self.obj = g.Circle(g.Point(self.x,325),35)
             self.obj.setFill('snow')          
             self.obj.draw(self.w)
 #drawing the cloud objects
