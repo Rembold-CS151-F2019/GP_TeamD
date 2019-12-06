@@ -39,7 +39,7 @@ def main():
     gameover=False
     while key != 'e': #the game will exit, gameover=True, if e is pressed at any time   
         key=w.checkKey()
-        if key == "Right":
+        if key == "Right" and counter < 2: #added so game won't break if you press the arrow too many times
             counter += 1
             for item in w.items[:]: #undraws title screen if the right arrow has been clicked once
                 item.undraw()
