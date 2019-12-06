@@ -16,10 +16,21 @@ import random
 
 w = Titlescreen.w #keeps everything on the same screen instead of multiple screens popping up
 obj = [] #an object list to keep track of what is on the screen 
-
 def create(): #function that randomly generates clouds and logs for the game
    r = [0,1]  
    c = random.choice(r)
+   if scounter < 3: #this if statement will cause more objects to appear faster after the score reaches a certain #
+       x = 3000
+   elif scounter < 6:
+       x = 2500
+   elif scounter < 9:
+       x = 2000
+   elif scounter < 12:
+       x = 1800
+   elif scounter < 15:
+       x = 1600
+   else:
+       x = 1400
    if c == 0:
     
        obj.append(Cloud_Log_Hit.Log(w,1050,450)) #adding to the obj list
@@ -27,7 +38,7 @@ def create(): #function that randomly generates clouds and logs for the game
  
        obj.append(Cloud_Log_Hit.Cloud(w,1050,450))
    if not gameover:
-       w.after(3000,create) #if the game isn't done, continue to create clouds and logs every 3 seconds
+       w.after(x,create) #if the game isn't done, continue to create clouds and logs every 3 seconds
    
 
 def main():
@@ -35,6 +46,7 @@ def main():
     Titlescreen.TitleScreen() #calls the title screen
     key = None
     counter = 0 #keeps track of how many times the right arrow has been clicked
+    global scounter
     scounter=0
     gameover=False
     while key != 'e': #the game will exit, gameover=True, if e is pressed at any time   
@@ -58,8 +70,11 @@ def main():
                 H = Jump_and_Duck.Hen(w,300,380,70)#creates Henrietta object, draws her too
                 key = None
                 
-        if key == "Return": #if enter is pressed, the game starts
+        if key == "Return" and counter == 2: #if enter is pressed, the game starts
             message0.undraw() #undraws the press enter to start
+            message1 = g.Text(g.Point(100,100), "SCORE: " + str(scounter))
+            message1.setSize(20)
+            message1.draw(w)
             create() #calls the create function so a log or cloud will start rolling accross the screen
             key = None #resets key back to None to check what the player presses
             while key!= 'e' and not gameover: #the user can either press e or run into an object to end the game
@@ -71,9 +86,13 @@ def main():
                         gameover=True #ends the game if she's been hit
                     if o.offscreen():
                         scounter +=1 #if the object is off screen, the score is incremented and the object is removed from the list
-                        #that checks if it hits Henrietta
+                        #that checks if it hits Henrietta 
+                        message1.undraw()
+                        message1 = g.Text(g.Point(100,100), "SCORE: " + str(scounter)) #shows the user their score
+                        message1.setSize(20)
+                        message1.draw(w)
                         obj.remove(o)
-                g.update(30) #graphics updating everthing on the screen
+                g.update(100) #graphics updating everthing on the screen
         if gameover:
             break #breaks out of loop if game is over
     for item in w.items[:]: #undraws everything on the game screen
